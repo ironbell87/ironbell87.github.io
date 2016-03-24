@@ -1,9 +1,30 @@
----
-layout: default
-title: Hank Quinlan, Horrible Cop
----
-
-		<div class="blurb">
-			<h1>Hi there, I'm Hank Quinlan!</h1>
-			<p>I'm best known as the horrible cop from <em>A Touch of Evil</em>. Don't trust me. <a href="/about">Read more about my life...</a></p>
-		</div> 
+<!DOCTYPE html> 
+<html>
+  <head>
+    <title>BezierCurveTo example</title>
+    
+  </head>
+    <body>
+        <canvas id="demo" width="400" height="400">This browser or document mode doesn't support canvas</canvas>
+      <script>
+        var canvas = document.getElementById("demo")
+        if (canvas.getContext) {
+          var ctx = canvas.getContext('2d');
+          // Draw a straight reference line.
+          ctx.beginPath();
+          ctx.strokeStyle = "blue";
+          ctx.moveTo(100, 100);
+          ctx.lineTo(300, 100);
+          ctx.stroke();
+          // Draw a Bezier curve by using the same line cooridinates.
+          ctx.beginPath();
+          ctx.lineWidth = "3";
+          ctx.strokeStyle = "black";
+          ctx.moveTo(100, 100);
+          ctx.bezierCurveTo(200, 200, 200, 0, 300, 100);
+          ctx.stroke();
+        }
+      </script>
+    </body>
+</html>
+index.htmlOpen
